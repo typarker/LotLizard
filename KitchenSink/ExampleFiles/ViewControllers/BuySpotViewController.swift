@@ -38,10 +38,24 @@ class BuySpotViewController: ExampleViewController, UITableViewDataSource, MKMap
         
         var mapView = MKMapView()
         
+        // 1
+        let location = CLLocationCoordinate2D(
+            latitude: 29.6520,
+            longitude: -82.35
+        )
+        // 2
+        let span = MKCoordinateSpanMake(0.025, 0.025)
+        let region = MKCoordinateRegion(center: location, span: span)
+        mapView.setRegion(region, animated: true)
+        
         mapView.mapType = .Standard
         mapView.frame = view.frame
         mapView.delegate = self
         view.addSubview(mapView)
+        
+        
+        
+        //populateMap()
         
         /**self.tableView = UITableView(frame: self.view.bounds, style: .Grouped)
         self.tableView.delegate = self
@@ -70,6 +84,52 @@ class BuySpotViewController: ExampleViewController, UITableViewDataSource, MKMap
         backView.backgroundColor = UIColor(red: 208/255, green: 208/255, blue: 208/255, alpha: 1.0)
         //self.tableView.backgroundView = backView
     }
+    
+    func populateMap(){
+        mapView.removeAnnotations(mapView.annotations) // 1
+        //let lots = Lot.allObjectsInRealm(realm)
+        //var lotWithSpot = lots.objectsWhere("spots > 0")
+        
+        
+        var query = PFQuery(className:"MyLotParse")
+        query.whereKey("spots", greaterThan: 0)
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [AnyObject]!, error: NSError!) -> Void in
+            if error == nil {
+                // The find succeeded.
+                NSLog("Successfully retrieved \(objects.count) spots.")
+                // Do something with the found objects
+                for object in objects {
+                    NSLog("%@", object.objectId)
+                    let latitude = object["latitude"] as Double
+                    let longitude = object["longitude"] as Double
+                    let price = object["price"] as String
+                    let coord = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                    let id = object.objectId
+                    let lotAnnotation = LotAnnotation(coordinate: coord, title: price, subtitle: "Dollars", id: id) // 3
+                    self.mapView.addAnnotation(lotAnnotation) // 4
+                    
+                }
+            } else {
+                // Log details of the failure
+                NSLog("Error: %@ %@", error, error.userInfo!)
+            }
+        }
+        
+        //println(lots)
+        // Create annotations for each one
+        /*for lot in lotWithSpot {
+        let aLot = lot as Lot
+        let coord = CLLocationCoordinate2D(latitude: aLot.latitude, longitude: aLot.longitude);
+        let lotAnnotation = LotAnnotation(coordinate: coord, title: String(aLot.price), subtitle: "Dollars", lot: aLot, id: aLot.id) // 3
+        mapView.addAnnotation(lotAnnotation) // 4
+        
+        }
+        
+        println(lotWithSpot)
+        */
+    }
+    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
