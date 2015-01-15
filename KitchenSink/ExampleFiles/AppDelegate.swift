@@ -64,6 +64,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        Parse.setApplicationId("Tuw3w4dCezCqsOUt5SctfNuLW1T5FoxWoZoPJoaL", clientKey: "LyIgRe9qSdUadkny0zcmYMDQbCi4IJ2m7QEYksaX")
+        
         self.window.backgroundColor = UIColor.whiteColor()
         self.window.makeKeyAndVisible()
         
