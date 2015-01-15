@@ -22,6 +22,8 @@
 		2BE66C7A19C50C0B005EDC19 /* SideDrawerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE66C7919C50C0B005EDC19 /* SideDrawerTableViewCell.swift */; };
 		2BE66C7C19C50C2C005EDC19 /* SideDrawerSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE66C7B19C50C2C005EDC19 /* SideDrawerSectionHeaderView.swift */; };
 		2BE66C7E19C50D87005EDC19 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BE66C7D19C50D87005EDC19 /* LaunchScreen.xib */; };
+		A0BADE771A685475004E3F4B /* BuySpotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BADE761A685475004E3F4B /* BuySpotViewController.swift */; };
+		A0BADE791A685526004E3F4B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0BADE781A685526004E3F4B /* MapKit.framework */; };
 		F5B300F119C7910B00F04614 /* AnimatedMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B300F019C7910B00F04614 /* AnimatedMenuButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +45,8 @@
 		2BE66C7919C50C0B005EDC19 /* SideDrawerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideDrawerTableViewCell.swift; sourceTree = "<group>"; };
 		2BE66C7B19C50C2C005EDC19 /* SideDrawerSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideDrawerSectionHeaderView.swift; sourceTree = "<group>"; };
 		2BE66C7D19C50D87005EDC19 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		A0BADE761A685475004E3F4B /* BuySpotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuySpotViewController.swift; sourceTree = "<group>"; };
+		A0BADE781A685526004E3F4B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F5B300F019C7910B00F04614 /* AnimatedMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedMenuButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0BADE791A685526004E3F4B /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +65,7 @@
 		2BCB049119C4F334002CBDB6 = {
 			isa = PBXGroup;
 			children = (
+				A0BADE781A685526004E3F4B /* MapKit.framework */,
 				2BCB04BF19C4F3BD002CBDB6 /* DrawerController */,
 				2BCB049C19C4F334002CBDB6 /* ExampleFiles */,
 				2BCB049B19C4F334002CBDB6 /* Products */,
@@ -120,6 +126,7 @@
 			children = (
 				2BCB04CF19C4F814002CBDB6 /* ExampleViewController.swift */,
 				2BCB04D319C4FB39002CBDB6 /* ExampleCenterTableViewController.swift */,
+				A0BADE761A685475004E3F4B /* BuySpotViewController.swift */,
 				2BE66C7319C50BA0005EDC19 /* ExampleSideDrawerViewController.swift */,
 				2BE66C7519C50BD6005EDC19 /* ExampleLeftSideDrawerViewController.swift */,
 				2BE66C7719C50BE8005EDC19 /* ExampleRightSideDrawerViewController.swift */,
@@ -169,6 +176,11 @@
 				TargetAttributes = {
 					2BCB049919C4F334002CBDB6 = {
 						CreatedOnToolsVersion = 6.0;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -217,6 +229,7 @@
 				2BCB04CD19C4F58F002CBDB6 /* DrawerController.swift in Sources */,
 				2BE66C7C19C50C2C005EDC19 /* SideDrawerSectionHeaderView.swift in Sources */,
 				2BCB04C819C4F4DE002CBDB6 /* ExampleDrawerVisualStateManager.swift in Sources */,
+				A0BADE771A685475004E3F4B /* BuySpotViewController.swift in Sources */,
 				2BC043CD19C505FA00CA68B6 /* CenterTableViewCell.swift in Sources */,
 				F5B300F119C7910B00F04614 /* AnimatedMenuButton.swift in Sources */,
 				2BCB04D419C4FB39002CBDB6 /* ExampleCenterTableViewController.swift in Sources */,
