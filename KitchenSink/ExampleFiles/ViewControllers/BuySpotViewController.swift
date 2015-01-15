@@ -24,13 +24,13 @@ class BuySpotViewController: ExampleViewController, UITableViewDataSource, MKMap
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
-        self.restorationIdentifier = "ExampleCenterControllerRestorationKey"
+        self.restorationIdentifier = "BuySpotViewControllerRestorationKey"
     }
     
     override init() {
         super.init()
         
-        self.restorationIdentifier = "ExampleCenterControllerRestorationKey"
+        self.restorationIdentifier = "BuySpotViewControllerRestorationKey"
     }
     
     override func viewDidLoad() {

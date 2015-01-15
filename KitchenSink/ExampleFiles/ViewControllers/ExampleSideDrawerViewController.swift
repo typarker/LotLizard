@@ -291,7 +291,10 @@ class ExampleSideDrawerViewController: ExampleViewController, UITableViewDataSou
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch indexPath.section {
         case DrawerSection.ViewSelection.rawValue:
-            let center = ExampleCenterTableViewController()
+            
+            //HERE'S WHERE TO CHANGE CENTER VIEW CONTROLLER!
+            
+            let center = BuySpotViewController()
             let nav = UINavigationController(rootViewController: center)
             
             if indexPath.row % 2 == 0 {
