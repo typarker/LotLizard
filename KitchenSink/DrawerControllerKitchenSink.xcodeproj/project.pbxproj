@@ -42,6 +42,7 @@
 		A0BADE9A1A6856D4004E3F4B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0BADE8E1A6856D4004E3F4B /* StoreKit.framework */; };
 		A0BADE9B1A6856D4004E3F4B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0BADE8F1A6856D4004E3F4B /* SystemConfiguration.framework */; };
 		A0BADE9E1A68593A004E3F4B /* LotAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BADE9D1A68593A004E3F4B /* LotAnnotation.swift */; };
+		A0BADEA01A6865AC004E3F4B /* redPin.png in Resources */ = {isa = PBXBuildFile; fileRef = A0BADE9F1A6865AC004E3F4B /* redPin.png */; };
 		F5B300F119C7910B00F04614 /* AnimatedMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B300F019C7910B00F04614 /* AnimatedMenuButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		A0BADE8E1A6856D4004E3F4B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A0BADE8F1A6856D4004E3F4B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A0BADE9D1A68593A004E3F4B /* LotAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LotAnnotation.swift; sourceTree = "<group>"; };
+		A0BADE9F1A6865AC004E3F4B /* redPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redPin.png; sourceTree = "<group>"; };
 		F5B300F019C7910B00F04614 /* AnimatedMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedMenuButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -197,6 +199,7 @@
 				2BCB04CF19C4F814002CBDB6 /* ExampleViewController.swift */,
 				2BCB04D319C4FB39002CBDB6 /* ExampleCenterTableViewController.swift */,
 				A0BADE9D1A68593A004E3F4B /* LotAnnotation.swift */,
+				A0BADE9F1A6865AC004E3F4B /* redPin.png */,
 				A0BADE761A685475004E3F4B /* BuySpotViewController.swift */,
 				2BE66C7319C50BA0005EDC19 /* ExampleSideDrawerViewController.swift */,
 				2BE66C7519C50BD6005EDC19 /* ExampleLeftSideDrawerViewController.swift */,
@@ -279,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BE66C7E19C50D87005EDC19 /* LaunchScreen.xib in Resources */,
+				A0BADEA01A6865AC004E3F4B /* redPin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

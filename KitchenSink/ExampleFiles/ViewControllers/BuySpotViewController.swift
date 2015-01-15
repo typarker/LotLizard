@@ -36,7 +36,7 @@ class BuySpotViewController: ExampleViewController, UITableViewDataSource, MKMap
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var mapView = MKMapView()
+        self.mapView = MKMapView()
         
         // 1
         let location = CLLocationCoordinate2D(
@@ -46,16 +46,16 @@ class BuySpotViewController: ExampleViewController, UITableViewDataSource, MKMap
         // 2
         let span = MKCoordinateSpanMake(0.025, 0.025)
         let region = MKCoordinateRegion(center: location, span: span)
-        mapView.setRegion(region, animated: true)
+        self.mapView.setRegion(region, animated: true)
         
-        mapView.mapType = .Standard
-        mapView.frame = view.frame
-        mapView.delegate = self
-        view.addSubview(mapView)
+        self.mapView.mapType = .Standard
+        self.mapView.frame = view.frame
+        self.mapView.delegate = self
+        self.view.addSubview(self.mapView)
         
         
         
-        //populateMap()
+        
         
         /**self.tableView = UITableView(frame: self.view.bounds, style: .Grouped)
         self.tableView.delegate = self
@@ -83,10 +83,12 @@ class BuySpotViewController: ExampleViewController, UITableViewDataSource, MKMap
         let backView = UIView()
         backView.backgroundColor = UIColor(red: 208/255, green: 208/255, blue: 208/255, alpha: 1.0)
         //self.tableView.backgroundView = backView
+        populateMap()
+        
     }
     
     func populateMap(){
-        mapView.removeAnnotations(mapView.annotations) // 1
+        self.mapView.removeAnnotations(mapView.annotations) // 1
         //let lots = Lot.allObjectsInRealm(realm)
         //var lotWithSpot = lots.objectsWhere("spots > 0")
         
@@ -129,6 +131,41 @@ class BuySpotViewController: ExampleViewController, UITableViewDataSource, MKMap
         println(lotWithSpot)
         */
     }
+    
+    func mapView(_mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+        //if !(annotation is MKPointAnnotation) {
+        //if annotation is not an MKPointAnnotation (eg. MKUserLocation),
+        //return nil so map draws default view for it (eg. blue dot)...
+        // return nil
+        // }
+        //let textbox : UITextField = UITextField(frame: CGRect(x: 0, y: 0, width: 200.00, height: 40.00));
+        //textbox.text = "blah"
+        let reuseId = "test"
+        let button : UIButton = UIButton.buttonWithType(UIButtonType.ContactAdd) as UIButton
+        var anView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
+        if anView == nil {
+            anView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            anView.image = UIImage(named:"redPin.png")
+            anView.canShowCallout = true
+            
+            
+            //anView.leftCalloutAccessoryView = textbox
+            
+            //price = self.textbox.text
+            anView.rightCalloutAccessoryView = button
+            
+            button.addTarget(self, action: "buttonClicked:", forControlEvents: UIControlEvents.TouchUpInside)
+            
+            
+        }
+        else {
+            //we are re-using a view, update its annotation reference...
+            anView.annotation = annotation
+        }
+        
+        return anView
+    }
+
     
     
     override func viewWillAppear(animated: Bool) {
