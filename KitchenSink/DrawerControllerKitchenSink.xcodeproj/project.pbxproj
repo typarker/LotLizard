@@ -44,6 +44,8 @@
 		A0BADE9E1A68593A004E3F4B /* LotAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BADE9D1A68593A004E3F4B /* LotAnnotation.swift */; };
 		A0BADEA01A6865AC004E3F4B /* redPin.png in Resources */ = {isa = PBXBuildFile; fileRef = A0BADE9F1A6865AC004E3F4B /* redPin.png */; };
 		A0BADEA21A695AF3004E3F4B /* LeftNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BADEA11A695AF3004E3F4B /* LeftNavigationViewController.swift */; };
+		A0BADEAD1A69AC43004E3F4B /* SellSpotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BADEAC1A69AC43004E3F4B /* SellSpotViewController.swift */; };
+		A0BADEAF1A69B24B004E3F4B /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0BADEAE1A69B24B004E3F4B /* Accounts.framework */; };
 		F5B300F119C7910B00F04614 /* AnimatedMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B300F019C7910B00F04614 /* AnimatedMenuButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +89,8 @@
 		A0BADE9D1A68593A004E3F4B /* LotAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LotAnnotation.swift; sourceTree = "<group>"; };
 		A0BADE9F1A6865AC004E3F4B /* redPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redPin.png; sourceTree = "<group>"; };
 		A0BADEA11A695AF3004E3F4B /* LeftNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftNavigationViewController.swift; sourceTree = "<group>"; };
+		A0BADEAC1A69AC43004E3F4B /* SellSpotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellSpotViewController.swift; sourceTree = "<group>"; };
+		A0BADEAE1A69B24B004E3F4B /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		F5B300F019C7910B00F04614 /* AnimatedMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedMenuButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0BADEAF1A69B24B004E3F4B /* Accounts.framework in Frameworks */,
 				A0BADE901A6856D4004E3F4B /* AudioToolbox.framework in Frameworks */,
 				A0BADE911A6856D4004E3F4B /* CFNetwork.framework in Frameworks */,
 				A0BADE921A6856D4004E3F4B /* CoreGraphics.framework in Frameworks */,
@@ -122,6 +127,7 @@
 		2BCB049119C4F334002CBDB6 = {
 			isa = PBXGroup;
 			children = (
+				A0BADEAE1A69B24B004E3F4B /* Accounts.framework */,
 				A0BADE841A6856D4004E3F4B /* AudioToolbox.framework */,
 				A0BADE851A6856D4004E3F4B /* CFNetwork.framework */,
 				A0BADE861A6856D4004E3F4B /* CoreGraphics.framework */,
@@ -224,6 +230,7 @@
 			children = (
 				A0BADEA11A695AF3004E3F4B /* LeftNavigationViewController.swift */,
 				A0BADE761A685475004E3F4B /* BuySpotViewController.swift */,
+				A0BADEAC1A69AC43004E3F4B /* SellSpotViewController.swift */,
 				A0BADE9F1A6865AC004E3F4B /* redPin.png */,
 				A0BADE9D1A68593A004E3F4B /* LotAnnotation.swift */,
 			);
@@ -316,6 +323,7 @@
 				2BC043CB19C4FFC300CA68B6 /* TableViewCell.swift in Sources */,
 				2BCB04CD19C4F58F002CBDB6 /* DrawerController.swift in Sources */,
 				2BE66C7C19C50C2C005EDC19 /* SideDrawerSectionHeaderView.swift in Sources */,
+				A0BADEAD1A69AC43004E3F4B /* SellSpotViewController.swift in Sources */,
 				2BCB04C819C4F4DE002CBDB6 /* ExampleDrawerVisualStateManager.swift in Sources */,
 				A0BADE771A685475004E3F4B /* BuySpotViewController.swift in Sources */,
 				2BC043CD19C505FA00CA68B6 /* CenterTableViewCell.swift in Sources */,

@@ -19,10 +19,11 @@ class Left: UITableViewController {
     var sellSpotCell: UITableViewCell = UITableViewCell()
     var shareCell: UITableViewCell = UITableViewCell()
     
-    var lastNameText: UITextField = UITextField()
+    
     
     
     var button   = UIButton.buttonWithType(UIButtonType.System) as UIButton
+    var button2   = UIButton.buttonWithType(UIButtonType.System) as UIButton
     
     func buttonAction(sender:UIButton!)
     {
@@ -34,6 +35,19 @@ class Left: UITableViewController {
             //self.evo_drawerController?.setCenterViewController(nav, withCloseAnimation: true, completion: nil)
         
             self.evo_drawerController?.setCenterViewController(nav, withFullCloseAnimation: true, completion: nil)
+        
+    }
+    
+    func sellSpot(sender:UIButton!)
+    {
+        println("Button tapped")
+        var center = SellSpotViewController()
+        let nav = UINavigationController(rootViewController: center)
+        
+        
+        //self.evo_drawerController?.setCenterViewController(nav, withCloseAnimation: true, completion: nil)
+        
+        self.evo_drawerController?.setCenterViewController(nav, withFullCloseAnimation: true, completion: nil)
         
     }
     
@@ -61,11 +75,11 @@ class Left: UITableViewController {
 //        self.firstNameText.titleLabel?.text = "First Name"
 //        self.buySpotCell.addSubview(self.firstNameText)
         
-        // construct last name cell, section 0, row 1
-        self.sellSpotCell.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.5)
-        self.lastNameText = UITextField(frame: CGRectInset(self.sellSpotCell.contentView.bounds, 15, 0))
-        self.lastNameText.placeholder = "Last Name"
-        self.sellSpotCell.addSubview(self.lastNameText)
+        button2.frame = CGRectInset(self.buySpotCell.contentView.bounds, 0 ,0)
+        button2.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.5)
+        button2.setTitle("Sell Parking Spot", forState: UIControlState.Normal)
+        button2.addTarget(self, action: "sellSpot:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.sellSpotCell.addSubview(button2)
         
         // construct share cell, section 1, row 0
         self.shareCell.textLabel?.text = "Share with Friends"
