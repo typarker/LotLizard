@@ -43,6 +43,7 @@
 		A0BADE9B1A6856D4004E3F4B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0BADE8F1A6856D4004E3F4B /* SystemConfiguration.framework */; };
 		A0BADE9E1A68593A004E3F4B /* LotAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BADE9D1A68593A004E3F4B /* LotAnnotation.swift */; };
 		A0BADEA01A6865AC004E3F4B /* redPin.png in Resources */ = {isa = PBXBuildFile; fileRef = A0BADE9F1A6865AC004E3F4B /* redPin.png */; };
+		A0BADEA21A695AF3004E3F4B /* LeftNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BADEA11A695AF3004E3F4B /* LeftNavigationViewController.swift */; };
 		F5B300F119C7910B00F04614 /* AnimatedMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B300F019C7910B00F04614 /* AnimatedMenuButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,7 @@
 		A0BADE8F1A6856D4004E3F4B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A0BADE9D1A68593A004E3F4B /* LotAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LotAnnotation.swift; sourceTree = "<group>"; };
 		A0BADE9F1A6865AC004E3F4B /* redPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redPin.png; sourceTree = "<group>"; };
+		A0BADEA11A695AF3004E3F4B /* LeftNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftNavigationViewController.swift; sourceTree = "<group>"; };
 		F5B300F019C7910B00F04614 /* AnimatedMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedMenuButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				2BCB04C519C4F466002CBDB6 /* AppDelegate.swift */,
+				A0BADEA71A696552004E3F4B /* Ty's Customs */,
 				2BCB04C019C4F3C7002CBDB6 /* VisualStateManager */,
 				2BCB04C219C4F3CF002CBDB6 /* ViewControllers */,
 				2BCB04C319C4F3D2002CBDB6 /* TableViewHelpers */,
@@ -198,9 +201,6 @@
 			children = (
 				2BCB04CF19C4F814002CBDB6 /* ExampleViewController.swift */,
 				2BCB04D319C4FB39002CBDB6 /* ExampleCenterTableViewController.swift */,
-				A0BADE9D1A68593A004E3F4B /* LotAnnotation.swift */,
-				A0BADE9F1A6865AC004E3F4B /* redPin.png */,
-				A0BADE761A685475004E3F4B /* BuySpotViewController.swift */,
 				2BE66C7319C50BA0005EDC19 /* ExampleSideDrawerViewController.swift */,
 				2BE66C7519C50BD6005EDC19 /* ExampleLeftSideDrawerViewController.swift */,
 				2BE66C7719C50BE8005EDC19 /* ExampleRightSideDrawerViewController.swift */,
@@ -217,6 +217,18 @@
 				2BE66C7B19C50C2C005EDC19 /* SideDrawerSectionHeaderView.swift */,
 			);
 			path = TableViewHelpers;
+			sourceTree = "<group>";
+		};
+		A0BADEA71A696552004E3F4B /* Ty's Customs */ = {
+			isa = PBXGroup;
+			children = (
+				A0BADEA11A695AF3004E3F4B /* LeftNavigationViewController.swift */,
+				A0BADE761A685475004E3F4B /* BuySpotViewController.swift */,
+				A0BADE9F1A6865AC004E3F4B /* redPin.png */,
+				A0BADE9D1A68593A004E3F4B /* LotAnnotation.swift */,
+			);
+			name = "Ty's Customs";
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +322,7 @@
 				F5B300F119C7910B00F04614 /* AnimatedMenuButton.swift in Sources */,
 				2BCB04D419C4FB39002CBDB6 /* ExampleCenterTableViewController.swift in Sources */,
 				2BCB04D019C4F814002CBDB6 /* ExampleViewController.swift in Sources */,
+				A0BADEA21A695AF3004E3F4B /* LeftNavigationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

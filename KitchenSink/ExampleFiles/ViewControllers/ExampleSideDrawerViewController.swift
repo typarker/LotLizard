@@ -294,7 +294,7 @@ class ExampleSideDrawerViewController: ExampleViewController, UITableViewDataSou
             
             //HERE'S WHERE TO CHANGE CENTER VIEW CONTROLLER!
             
-            let center = BuySpotViewController()
+            var center = BuySpotViewController()
             let nav = UINavigationController(rootViewController: center)
             
             if indexPath.row % 2 == 0 {
