@@ -19,12 +19,14 @@ import UIKit
 
 
 
-class AccountViewController: UITableViewController, UITableViewDelegate {
+class AccountViewController: UITableViewController, UITableViewDelegate, PFLogInViewControllerDelegate {
     
     var userCell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "userCell")
     var logOutCell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "logOutCell")
     
+    
     var logOut = UIButton.buttonWithType(UIButtonType.System) as UIButton
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,9 +41,8 @@ class AccountViewController: UITableViewController, UITableViewDelegate {
         logOut.frame = CGRectInset(self.logOutCell.contentView.bounds, 15 ,0)
         logOut.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
         logOut.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.5)
-        logOut.setTitle("Log Out", forState: UIControlState.Normal)
-        logOut.addTarget(self, action: "logOut:", forControlEvents: UIControlEvents.TouchUpInside)
-        self.logOutCell.addSubview(logOut)
+        
+        
        
         
         let doubleTap = UITapGestureRecognizer(target: self, action: "doubleTap:")
@@ -81,7 +82,7 @@ class AccountViewController: UITableViewController, UITableViewDelegate {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch(section) {
-        case 0: return 1
+        case 0: return 2
         //case 1: return 1
         default: fatalError("Unknown number of sections")
         }
@@ -94,10 +95,21 @@ class AccountViewController: UITableViewController, UITableViewDelegate {
             switch(indexPath.section) {
             case 0:
                 switch(indexPath.row) {
-                case 0: //self.userCell.textLabel?.text = "Log Out"
-                    return self.logOutCell   // section 0, row 0 is the first name
-                case 1: return self.userCell    // section 0, row 1 is the last name
-                case 2: return self.userCell
+                case 0: if PFUser.currentUser() != nil { self.userCell.textLabel!.text = "Logged in as " + PFUser.currentUser().username}
+                else {self.userCell.textLabel?.text = "Not logged in"}
+                    return self.userCell  // section 0, row 0 is the first name
+                case 1:
+                    if PFUser.currentUser() != nil {
+                        logOut.setTitle("Log Out", forState: UIControlState.Normal)
+                        logOut.addTarget(self, action: "logOut:", forControlEvents: UIControlEvents.TouchUpInside)
+                    }
+                    else{
+                        logOut.setTitle("Log In", forState: UIControlState.Normal)
+                        logOut.addTarget(self, action: "logIn:", forControlEvents: UIControlEvents.TouchUpInside)
+                    }
+                        self.logOutCell.addSubview(logOut)
+                        return self.logOutCell    // section 0, row 1 is the last name
+                //case 2: return self.logOutCell
                 default: fatalError("Unknown row in section 0")
                 }
             case 1:
@@ -116,6 +128,7 @@ class AccountViewController: UITableViewController, UITableViewDelegate {
     {
            // Log Out User
         PFUser.logOut()
+        self.tableView.reloadData()
         
 //        // Show the signup or login screen
 //        var logInController = PFLogInViewController()
@@ -138,6 +151,33 @@ class AccountViewController: UITableViewController, UITableViewDelegate {
         
         
     
+    }
+    
+    func logIn(sender:UIButton!){
+        // Show the signup or login screen
+        var logInController = PFLogInViewController()
+        logInController.delegate = self
+        logInController.fields = PFLogInFields.UsernameAndPassword | PFLogInFields.SignUpButton | PFLogInFields.LogInButton | PFLogInFields.PasswordForgotten | PFLogInFields.DismissButton
+        self.presentViewController(logInController, animated:true, completion: nil)
+        self.tableView.reloadData()
+    }
+    //Dismiss Login View Controller after Login
+    
+    func logInViewController(controller: PFLogInViewController, didLogInUser user: PFUser) -> Void {
+        self.dismissViewControllerAnimated(true, completion: nil)
+        self.tableView.reloadData()
+        
+        //matching user to device
+        let currentInstallation: PFInstallation = PFInstallation.currentInstallation()
+        var user = PFUser.currentUser()
+        currentInstallation.setObject(user, forKey: "user")
+        currentInstallation.saveInBackground()
+    }
+    
+    func logInViewControllerDidCancelLogIn(controller: PFLogInViewController) -> Void {
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        
     }
 
 
