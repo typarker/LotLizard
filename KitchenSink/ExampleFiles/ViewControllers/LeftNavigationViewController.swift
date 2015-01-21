@@ -17,6 +17,7 @@ class Left: UITableViewController {
     
     var buySpotCell: UITableViewCell = UITableViewCell()
     var sellSpotCell: UITableViewCell = UITableViewCell()
+    var viewAccountCell: UITableViewCell = UITableViewCell()
     var shareCell: UITableViewCell = UITableViewCell()
     
     
@@ -24,6 +25,7 @@ class Left: UITableViewController {
     
     var button   = UIButton.buttonWithType(UIButtonType.System) as UIButton
     var button2   = UIButton.buttonWithType(UIButtonType.System) as UIButton
+    var button3   = UIButton.buttonWithType(UIButtonType.System) as UIButton
     
     func buttonAction(sender:UIButton!)
     {
@@ -51,6 +53,19 @@ class Left: UITableViewController {
         
     }
     
+    func viewAccount(sender:UIButton!)
+    {
+        println("Button tapped")
+        var center = AccountViewController()
+        let nav = UINavigationController(rootViewController: center)
+        
+        
+        //self.evo_drawerController?.setCenterViewController(nav, withCloseAnimation: true, completion: nil)
+        
+        self.evo_drawerController?.setCenterViewController(nav, withFullCloseAnimation: true, completion: nil)
+        
+    }
+    
     override func loadView() {
         super.loadView()
         
@@ -63,7 +78,9 @@ class Left: UITableViewController {
 //        self.firstNameText.placeholder = "First Name"
 //        self.buySpotCell.addSubview(self.firstNameText)
         
-        button.frame = CGRectInset(self.buySpotCell.contentView.bounds, 0 ,0)
+
+        button.frame = CGRectInset(self.buySpotCell.contentView.bounds, 15 ,0)
+        button.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
         button.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.5)
         button.setTitle("Reserve Parking Spot", forState: UIControlState.Normal)
         button.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
@@ -75,11 +92,19 @@ class Left: UITableViewController {
 //        self.firstNameText.titleLabel?.text = "First Name"
 //        self.buySpotCell.addSubview(self.firstNameText)
         
-        button2.frame = CGRectInset(self.buySpotCell.contentView.bounds, 0 ,0)
+        button2.frame = CGRectInset(self.buySpotCell.contentView.bounds, 15 ,0)
+        button2.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
         button2.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.5)
         button2.setTitle("Sell Parking Spot", forState: UIControlState.Normal)
         button2.addTarget(self, action: "sellSpot:", forControlEvents: UIControlEvents.TouchUpInside)
         self.sellSpotCell.addSubview(button2)
+        
+        button3.frame = CGRectInset(self.buySpotCell.contentView.bounds, 15 ,0)
+        button3.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
+        button3.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.5)
+        button3.setTitle("Your Account", forState: UIControlState.Normal)
+        button3.addTarget(self, action: "viewAccount:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.viewAccountCell.addSubview(button3)
         
         // construct share cell, section 1, row 0
         self.shareCell.textLabel?.text = "Share with Friends"
@@ -95,7 +120,7 @@ class Left: UITableViewController {
     // Return the number of rows for each section in your static table
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch(section) {
-        case 0: return 2    // section 0 has 2 rows
+        case 0: return 3    // section 0 has 2 rows
         case 1: return 1    // section 1 has 1 row
         default: fatalError("Unknown number of sections")
         }
@@ -108,6 +133,7 @@ class Left: UITableViewController {
             switch(indexPath.row) {
             case 0: return self.buySpotCell   // section 0, row 0 is the first name
             case 1: return self.sellSpotCell    // section 0, row 1 is the last name
+            case 2: return self.viewAccountCell
             default: fatalError("Unknown row in section 0")
             }
         case 1:

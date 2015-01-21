@@ -11,7 +11,7 @@ import MapKit
 
 
 
-class BuySpotViewController: ExampleViewController, MKMapViewDelegate {
+class BuySpotViewController: UIViewController, MKMapViewDelegate {
     
     
     var mapView: MKMapView!
@@ -30,6 +30,8 @@ class BuySpotViewController: ExampleViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Reserve a Spot"
         
         self.mapView = MKMapView()
         

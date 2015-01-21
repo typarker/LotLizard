@@ -25,7 +25,8 @@ class SellSpotViewController: ExampleViewController, MKMapViewDelegate, PFLogInV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = "Sell Your Spot"
+    
         self.mapView = MKMapView()
         
         
