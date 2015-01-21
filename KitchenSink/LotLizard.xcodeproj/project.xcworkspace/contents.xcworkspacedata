@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:DrawerControllerKitchenSink.xcodeproj">
+      location = "self:LotLizard.xcodeproj">
    </FileRef>
 </Workspace>

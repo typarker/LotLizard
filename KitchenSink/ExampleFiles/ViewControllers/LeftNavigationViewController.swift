@@ -114,14 +114,14 @@ class Left: UITableViewController {
     
     // Return the number of sections
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
     // Return the number of rows for each section in your static table
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch(section) {
         case 0: return 3    // section 0 has 2 rows
-        case 1: return 1    // section 1 has 1 row
+        //case 1: return 1    // section 1 has 1 row
         default: fatalError("Unknown number of sections")
         }
     }
@@ -136,23 +136,23 @@ class Left: UITableViewController {
             case 2: return self.viewAccountCell
             default: fatalError("Unknown row in section 0")
             }
-        case 1:
-            switch(indexPath.row) {
-            case 0: return self.shareCell       // section 1, row 0 is the share option
-            default: fatalError("Unknown row in section 1")
-            }
+//        case 1:
+//            switch(indexPath.row) {
+//            case 0: return self.shareCell       // section 1, row 0 is the share option
+//            default: fatalError("Unknown row in section 1")
+//            }
         default: fatalError("Unknown section")
         }
     }
     
-    // Customize the section headings for each section
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch(section) {
-        case 0: return "Profile"
-        case 1: return "Social"
-        default: fatalError("Unknown section")
-        }
-    }
+//    // Customize the section headings for each section
+//    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        switch(section) {
+//        case 0: return "Menu"
+//        case 1: return "Social"
+//        default: fatalError("Unknown section")
+//        }
+//    }
     
     // Configure the row selection code for any cells that you want to customize the row selection
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

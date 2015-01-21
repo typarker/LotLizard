@@ -114,8 +114,9 @@ class AccountViewController: UITableViewController, UITableViewDelegate {
     
     func logOut(sender:UIButton!)
     {
-        // Log Out User
+           // Log Out User
         PFUser.logOut()
+        
 //        // Show the signup or login screen
 //        var logInController = PFLogInViewController()
 //        var signUpController = PFSignUpViewController()

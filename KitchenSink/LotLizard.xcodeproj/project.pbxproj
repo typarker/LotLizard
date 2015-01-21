@@ -53,7 +53,7 @@
 /* Begin PBXFileReference section */
 		2BC043CA19C4FFC300CA68B6 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		2BC043CC19C505FA00CA68B6 /* CenterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterTableViewCell.swift; sourceTree = "<group>"; };
-		2BCB049A19C4F334002CBDB6 /* DrawerControllerKitchenSink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawerControllerKitchenSink.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BCB049A19C4F334002CBDB6 /* LotLizard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LotLizard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BCB049E19C4F334002CBDB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BCB04C519C4F466002CBDB6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BCB04C719C4F4DE002CBDB6 /* ExampleDrawerVisualStateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleDrawerVisualStateManager.swift; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 		2BCB049B19C4F334002CBDB6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2BCB049A19C4F334002CBDB6 /* DrawerControllerKitchenSink.app */,
+				2BCB049A19C4F334002CBDB6 /* LotLizard.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -244,9 +244,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2BCB049919C4F334002CBDB6 /* DrawerControllerKitchenSink */ = {
+		2BCB049919C4F334002CBDB6 /* LotLizard */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2BCB04B919C4F334002CBDB6 /* Build configuration list for PBXNativeTarget "DrawerControllerKitchenSink" */;
+			buildConfigurationList = 2BCB04B919C4F334002CBDB6 /* Build configuration list for PBXNativeTarget "LotLizard" */;
 			buildPhases = (
 				2BCB049619C4F334002CBDB6 /* Sources */,
 				2BCB049719C4F334002CBDB6 /* Frameworks */,
@@ -256,9 +256,9 @@
 			);
 			dependencies = (
 			);
-			name = DrawerControllerKitchenSink;
+			name = LotLizard;
 			productName = DrawerControllerKitchenSink;
-			productReference = 2BCB049A19C4F334002CBDB6 /* DrawerControllerKitchenSink.app */;
+			productReference = 2BCB049A19C4F334002CBDB6 /* LotLizard.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -280,7 +280,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2BCB049519C4F334002CBDB6 /* Build configuration list for PBXProject "DrawerControllerKitchenSink" */;
+			buildConfigurationList = 2BCB049519C4F334002CBDB6 /* Build configuration list for PBXProject "LotLizard" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -293,7 +293,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2BCB049919C4F334002CBDB6 /* DrawerControllerKitchenSink */,
+				2BCB049919C4F334002CBDB6 /* LotLizard */,
 			);
 		};
 /* End PBXProject section */
@@ -431,7 +431,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/ExampleFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LotLizard;
 				SWIFT_OBJC_BRIDGING_HEADER = "Lizard-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -448,14 +448,14 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/ExampleFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LotLizard;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2BCB049519C4F334002CBDB6 /* Build configuration list for PBXProject "DrawerControllerKitchenSink" */ = {
+		2BCB049519C4F334002CBDB6 /* Build configuration list for PBXProject "LotLizard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2BCB04B719C4F334002CBDB6 /* Debug */,
@@ -464,7 +464,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2BCB04B919C4F334002CBDB6 /* Build configuration list for PBXNativeTarget "DrawerControllerKitchenSink" */ = {
+		2BCB04B919C4F334002CBDB6 /* Build configuration list for PBXNativeTarget "LotLizard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2BCB04BA19C4F334002CBDB6 /* Debug */,
