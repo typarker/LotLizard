@@ -21,11 +21,27 @@ import UIKit
 
 class AccountViewController: UITableViewController, UITableViewDelegate {
     
-    var cell: UITableViewCell = UITableViewCell()
+    var userCell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "userCell")
+    var logOutCell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "logOutCell")
+    
+    var logOut = UIButton.buttonWithType(UIButtonType.System) as UIButton
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Your Account"
+        // construct first name cell, section 0, row 0
+//        self.buySpotCell.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.5)
+//        self.firstNameText = UITextField(frame: CGRectInset(self.buySpotCell.contentView.bounds, 15, 0))
+//        self.firstNameText.placeholder = "First Name"
+//        self.buySpotCell.addSubview(self.firstNameText)
+        
+        logOut.frame = CGRectInset(self.logOutCell.contentView.bounds, 15 ,0)
+        logOut.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
+        logOut.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.5)
+        logOut.setTitle("Log Out", forState: UIControlState.Normal)
+        logOut.addTarget(self, action: "logOut:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.logOutCell.addSubview(logOut)
        
         
         let doubleTap = UITapGestureRecognizer(target: self, action: "doubleTap:")
@@ -65,8 +81,8 @@ class AccountViewController: UITableViewController, UITableViewDelegate {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch(section) {
-        case 0: return 3    // section 0 has 2 rows
-        case 1: return 1    // section 1 has 1 row
+        case 0: return 1
+        //case 1: return 1
         default: fatalError("Unknown number of sections")
         }
     }
@@ -74,26 +90,55 @@ class AccountViewController: UITableViewController, UITableViewDelegate {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> 
         UITableViewCell {
-//            switch(indexPath.section) {
-//            case 0:
-//                switch(indexPath.row) {
-//                case 0: return self.buySpotCell   // section 0, row 0 is the first name
-//                case 1: return self.sellSpotCell    // section 0, row 1 is the last name
-//                case 2: return self.viewAccountCell
-//                default: fatalError("Unknown row in section 0")
-//                }
-//            case 1:
-//                switch(indexPath.row) {
-//                case 0: return self.shareCell       // section 1, row 0 is the share option
-//                default: fatalError("Unknown row in section 1")
-//                }
-//            default: fatalError("Unknown section")
-//            }
+            
+            switch(indexPath.section) {
+            case 0:
+                switch(indexPath.row) {
+                case 0: //self.userCell.textLabel?.text = "Log Out"
+                    return self.logOutCell   // section 0, row 0 is the first name
+                case 1: return self.userCell    // section 0, row 1 is the last name
+                case 2: return self.userCell
+                default: fatalError("Unknown row in section 0")
+                }
+            case 1:
+                switch(indexPath.row) {
+                case 0: return self.userCell      // section 1, row 0 is the share option
+                default: fatalError("Unknown row in section 1")
+                }
+            default: fatalError("Unknown section")
+            }
     
     // Configure the cell...
-    
-    return cell
+ 
     }
+    
+    func logOut(sender:UIButton!)
+    {
+        // Log Out User
+        PFUser.logOut()
+//        // Show the signup or login screen
+//        var logInController = PFLogInViewController()
+//        var signUpController = PFSignUpViewController()
+//        
+//        //let users sign up with email only
+//        
+//        
+//        //        logInController.signUpController = signUpController
+//        //
+//        //        logInController.signUpController.delegate = self
+//        logInController.delegate = self
+//        //        logInController.fields = PFLogInFields.UsernameAndPassword | PFLogInFields.SignUpButton | PFLogInFields.LogInButton | PFLogInFields.PasswordForgotten
+//        //
+//        //        logInController.signUpController.fields = PFSignUpFields.UsernameAndPassword
+//        //            | PFSignUpFields.SignUpButton
+//        //            | PFSignUpFields.DismissButton
+//        self.presentViewController(logInController, animated:true, completion: nil)
+//        //self.presentViewController(signUpController, animated:true, completion: nil)
+        
+        
+    
+    }
+
 
     
     /*
