@@ -11,7 +11,7 @@ import MapKit
 
 
 
-class SellSpotViewController: ExampleViewController, MKMapViewDelegate, PFLogInViewControllerDelegate {
+class SellSpotViewController: UIViewController, MKMapViewDelegate, PFLogInViewControllerDelegate {
     
     
     var mapView: MKMapView!
@@ -104,7 +104,7 @@ class SellSpotViewController: ExampleViewController, MKMapViewDelegate, PFLogInV
     
     func logInViewControllerDidCancelLogIn(controller: PFLogInViewController) -> Void {
         self.dismissViewControllerAnimated(true, completion: nil)
-        performSegueWithIdentifier("startAgainID", sender: self)
+        //performSegueWithIdentifier("startAgainID", sender: self)
         
     }
     
@@ -196,10 +196,10 @@ class SellSpotViewController: ExampleViewController, MKMapViewDelegate, PFLogInV
     
     func buttonClicked(sender: UIButton!) {
         
-        //let secondViewController:AddLotViewController = AddLotViewController()
-        
-        //self.presentViewController(secondViewController, animated: true, completion: nil)
-        performSegueWithIdentifier("goToAddLot", sender: sender)
+        let secondViewController: AddLotWithXIBViewController = AddLotWithXIBViewController(nibName:"AddLotWithXIBViewController", bundle: nil)
+        //let secondViewController: BuySpotViewController = BuySpotViewController()
+        self.presentViewController(secondViewController, animated: true, completion: nil)
+        //performSegueWithIdentifier("goToAddLot", sender: sender)
         
     }
     

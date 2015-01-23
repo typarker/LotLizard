@@ -47,6 +47,11 @@
 		A0BADEAD1A69AC43004E3F4B /* SellSpotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BADEAC1A69AC43004E3F4B /* SellSpotViewController.swift */; };
 		A0BADEAF1A69B24B004E3F4B /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0BADEAE1A69B24B004E3F4B /* Accounts.framework */; };
 		A0C8DBB91A6F1BAD00590055 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C8DBB81A6F1BAD00590055 /* AccountViewController.swift */; };
+		A0C8DBC51A7087AB00590055 /* AddLotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C8DBC41A7087AB00590055 /* AddLotViewController.swift */; };
+		A0C8DBC71A72A4BF00590055 /* AddLot.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0C8DBC61A72A4BF00590055 /* AddLot.xib */; };
+		A0C8DBCA1A72A72A00590055 /* AddLotWithXIBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C8DBC81A72A72A00590055 /* AddLotWithXIBViewController.swift */; };
+		A0C8DBCB1A72A72A00590055 /* AddLotWithXIBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0C8DBC91A72A72A00590055 /* AddLotWithXIBViewController.xib */; };
+		A0C8DBCD1A72FF4500590055 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0C8DBCC1A72FF4500590055 /* Storyboard.storyboard */; };
 		F5B300F119C7910B00F04614 /* AnimatedMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B300F019C7910B00F04614 /* AnimatedMenuButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +98,11 @@
 		A0BADEAC1A69AC43004E3F4B /* SellSpotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellSpotViewController.swift; sourceTree = "<group>"; };
 		A0BADEAE1A69B24B004E3F4B /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		A0C8DBB81A6F1BAD00590055 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		A0C8DBC41A7087AB00590055 /* AddLotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLotViewController.swift; sourceTree = "<group>"; };
+		A0C8DBC61A72A4BF00590055 /* AddLot.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddLot.xib; sourceTree = "<group>"; };
+		A0C8DBC81A72A72A00590055 /* AddLotWithXIBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLotWithXIBViewController.swift; sourceTree = "<group>"; };
+		A0C8DBC91A72A72A00590055 /* AddLotWithXIBViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddLotWithXIBViewController.xib; sourceTree = "<group>"; };
+		A0C8DBCC1A72FF4500590055 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		F5B300F019C7910B00F04614 /* AnimatedMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedMenuButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -231,9 +241,14 @@
 			isa = PBXGroup;
 			children = (
 				A0BADEA11A695AF3004E3F4B /* LeftNavigationViewController.swift */,
+				A0C8DBC61A72A4BF00590055 /* AddLot.xib */,
 				A0C8DBB81A6F1BAD00590055 /* AccountViewController.swift */,
 				A0BADE761A685475004E3F4B /* BuySpotViewController.swift */,
 				A0BADEAC1A69AC43004E3F4B /* SellSpotViewController.swift */,
+				A0C8DBC41A7087AB00590055 /* AddLotViewController.swift */,
+				A0C8DBC81A72A72A00590055 /* AddLotWithXIBViewController.swift */,
+				A0C8DBC91A72A72A00590055 /* AddLotWithXIBViewController.xib */,
+				A0C8DBCC1A72FF4500590055 /* Storyboard.storyboard */,
 				A0BADE9F1A6865AC004E3F4B /* redPin.png */,
 				A0BADE9D1A68593A004E3F4B /* LotAnnotation.swift */,
 			);
@@ -304,7 +319,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BE66C7E19C50D87005EDC19 /* LaunchScreen.xib in Resources */,
+				A0C8DBC71A72A4BF00590055 /* AddLot.xib in Resources */,
+				A0C8DBCB1A72A72A00590055 /* AddLotWithXIBViewController.xib in Resources */,
 				A0BADEA01A6865AC004E3F4B /* redPin.png in Resources */,
+				A0C8DBCD1A72FF4500590055 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +335,7 @@
 			files = (
 				2BE66C7419C50BA0005EDC19 /* ExampleSideDrawerViewController.swift in Sources */,
 				2BE66C7A19C50C0B005EDC19 /* SideDrawerTableViewCell.swift in Sources */,
+				A0C8DBCA1A72A72A00590055 /* AddLotWithXIBViewController.swift in Sources */,
 				2BCB04C619C4F466002CBDB6 /* AppDelegate.swift in Sources */,
 				2BE66C7819C50BE8005EDC19 /* ExampleRightSideDrawerViewController.swift in Sources */,
 				A0BADE9E1A68593A004E3F4B /* LotAnnotation.swift in Sources */,
@@ -328,6 +347,7 @@
 				2BCB04CD19C4F58F002CBDB6 /* DrawerController.swift in Sources */,
 				2BE66C7C19C50C2C005EDC19 /* SideDrawerSectionHeaderView.swift in Sources */,
 				A0BADEAD1A69AC43004E3F4B /* SellSpotViewController.swift in Sources */,
+				A0C8DBC51A7087AB00590055 /* AddLotViewController.swift in Sources */,
 				2BCB04C819C4F4DE002CBDB6 /* ExampleDrawerVisualStateManager.swift in Sources */,
 				A0BADE771A685475004E3F4B /* BuySpotViewController.swift in Sources */,
 				2BC043CD19C505FA00CA68B6 /* CenterTableViewCell.swift in Sources */,
