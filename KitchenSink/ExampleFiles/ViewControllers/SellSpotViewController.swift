@@ -197,6 +197,8 @@ class SellSpotViewController: UIViewController, MKMapViewDelegate, PFLogInViewCo
     func buttonClicked(sender: UIButton!) {
         
         let secondViewController: AddLotWithXIBViewController = AddLotWithXIBViewController(nibName:"AddLotWithXIBViewController", bundle: nil)
+        secondViewController.latitude = coordToPass.latitude
+        secondViewController.longitude = coordToPass.longitude
         //let secondViewController: BuySpotViewController = BuySpotViewController()
         self.presentViewController(secondViewController, animated: true, completion: nil)
         //performSegueWithIdentifier("goToAddLot", sender: sender)

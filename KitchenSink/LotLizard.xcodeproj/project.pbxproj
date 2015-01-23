@@ -51,7 +51,6 @@
 		A0C8DBC71A72A4BF00590055 /* AddLot.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0C8DBC61A72A4BF00590055 /* AddLot.xib */; };
 		A0C8DBCA1A72A72A00590055 /* AddLotWithXIBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C8DBC81A72A72A00590055 /* AddLotWithXIBViewController.swift */; };
 		A0C8DBCB1A72A72A00590055 /* AddLotWithXIBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0C8DBC91A72A72A00590055 /* AddLotWithXIBViewController.xib */; };
-		A0C8DBCD1A72FF4500590055 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0C8DBCC1A72FF4500590055 /* Storyboard.storyboard */; };
 		F5B300F119C7910B00F04614 /* AnimatedMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B300F019C7910B00F04614 /* AnimatedMenuButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -102,7 +101,6 @@
 		A0C8DBC61A72A4BF00590055 /* AddLot.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddLot.xib; sourceTree = "<group>"; };
 		A0C8DBC81A72A72A00590055 /* AddLotWithXIBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLotWithXIBViewController.swift; sourceTree = "<group>"; };
 		A0C8DBC91A72A72A00590055 /* AddLotWithXIBViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddLotWithXIBViewController.xib; sourceTree = "<group>"; };
-		A0C8DBCC1A72FF4500590055 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		F5B300F019C7910B00F04614 /* AnimatedMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedMenuButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -242,13 +240,12 @@
 			children = (
 				A0BADEA11A695AF3004E3F4B /* LeftNavigationViewController.swift */,
 				A0C8DBC61A72A4BF00590055 /* AddLot.xib */,
+				A0C8DBC41A7087AB00590055 /* AddLotViewController.swift */,
 				A0C8DBB81A6F1BAD00590055 /* AccountViewController.swift */,
 				A0BADE761A685475004E3F4B /* BuySpotViewController.swift */,
 				A0BADEAC1A69AC43004E3F4B /* SellSpotViewController.swift */,
-				A0C8DBC41A7087AB00590055 /* AddLotViewController.swift */,
 				A0C8DBC81A72A72A00590055 /* AddLotWithXIBViewController.swift */,
 				A0C8DBC91A72A72A00590055 /* AddLotWithXIBViewController.xib */,
-				A0C8DBCC1A72FF4500590055 /* Storyboard.storyboard */,
 				A0BADE9F1A6865AC004E3F4B /* redPin.png */,
 				A0BADE9D1A68593A004E3F4B /* LotAnnotation.swift */,
 			);
@@ -322,7 +319,6 @@
 				A0C8DBC71A72A4BF00590055 /* AddLot.xib in Resources */,
 				A0C8DBCB1A72A72A00590055 /* AddLotWithXIBViewController.xib in Resources */,
 				A0BADEA01A6865AC004E3F4B /* redPin.png in Resources */,
-				A0C8DBCD1A72FF4500590055 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
