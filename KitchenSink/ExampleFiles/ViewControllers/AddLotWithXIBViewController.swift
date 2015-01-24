@@ -11,7 +11,13 @@ import MapKit
 
 class AddLotWithXIBViewController: UIViewController, PFLogInViewControllerDelegate, MKMapViewDelegate {
     
+    
+    @IBAction func cancel(sender: UIBarButtonItem) {
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 
+    
     @IBOutlet weak var mapView: MKMapView!
     
     
@@ -68,10 +74,16 @@ class AddLotWithXIBViewController: UIViewController, PFLogInViewControllerDelega
       
         println(self.latitude)
         println(self.longitude)
+        
+        
+        let barColor = UIColor(red: 247/255, green: 249/255, blue: 250/255, alpha: 1.0)
+        self.navigationController?.navigationBar.barTintColor = barColor
+        
+        self.navigationController?.view.layer.cornerRadius = 10.0
     }
-}
 
- 
+
+}
 
 
 
