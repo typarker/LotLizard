@@ -49,6 +49,7 @@ class AddLotWithXIBViewController: UIViewController, PFLogInViewControllerDelega
                 NSLog("%@", error)
             }
         }
+        dismissViewControllerAnimated(true, completion: nil)
         
     }
     
