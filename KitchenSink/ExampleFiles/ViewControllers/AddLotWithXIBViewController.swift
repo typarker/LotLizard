@@ -81,6 +81,11 @@ class AddLotWithXIBViewController: UIViewController, PFLogInViewControllerDelega
         self.navigationController?.navigationBar.barTintColor = barColor
         
         self.navigationController?.view.layer.cornerRadius = 10.0
+        
+        notes.layer.cornerRadius = 5
+        notes.layer.borderColor = UIColor.grayColor().colorWithAlphaComponent(0.5).CGColor
+        notes.layer.borderWidth = 0.5
+        notes.clipsToBounds = true
     }
 
 

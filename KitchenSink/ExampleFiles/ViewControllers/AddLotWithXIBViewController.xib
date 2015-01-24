@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddLotWithXIBViewController" customModule="LotLizard" customModuleProvider="target">
@@ -17,28 +18,38 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QR0-mu-DYh">
-                    <rect key="frame" x="194" y="239" width="42" height="20.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QR0-mu-DYh">
+                    <rect key="frame" x="12" y="233" width="75" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="satellite" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50u-pU-TtL">
-                    <rect key="frame" x="0.0" y="65" width="600" height="128"/>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="satellite" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50u-pU-TtL">
+                    <rect key="frame" x="0.0" y="64" width="600" height="125"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="125" id="bYb-8y-td5"/>
+                    </constraints>
                 </mapView>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u8J-Xz-InF">
-                    <rect key="frame" x="268" y="235" width="97" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u8J-Xz-InF">
+                    <rect key="frame" x="127" y="229" width="85" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="85" id="T1I-pY-rdB"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                 </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLJ-eO-wZs">
-                    <rect key="frame" x="32" y="327" width="46" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLJ-eO-wZs">
+                    <rect key="frame" x="12" y="338" width="75" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="75" id="Z6w-9x-z0P"/>
+                        <constraint firstAttribute="height" constant="21" id="mku-g9-CU1"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O5D-GK-ink">
-                    <rect key="frame" x="241" y="454" width="62" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O5D-GK-ink">
+                    <rect key="frame" x="260" y="406" width="62" height="30"/>
                     <state key="normal" title="List Spot">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -46,14 +57,11 @@
                         <action selector="sellSpot:" destination="-1" eventType="touchUpInside" id="urQ-Qc-syM"/>
                     </connections>
                 </button>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="IXQ-ka-saL">
-                    <rect key="frame" x="180" y="292" width="240" height="128"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
-                <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IEI-IA-EfG">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IEI-IA-EfG">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="9lr-t3-vDC"/>
+                    </constraints>
                     <items>
                         <navigationItem title="List Your Yard" id="2ja-7Q-dm8">
                             <barButtonItem key="leftBarButtonItem" title="Cancel" id="NBC-xo-K08">
@@ -64,17 +72,48 @@
                         </navigationItem>
                     </items>
                 </navigationBar>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="IXQ-ka-saL">
+                    <rect key="frame" x="127" y="299" width="465" height="99"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="99" id="5lm-xC-U8S"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <gestureRecognizers/>
             <constraints>
-                <constraint firstAttribute="centerX" secondItem="QR0-mu-DYh" secondAttribute="centerX" id="DMF-vo-w0M"/>
-                <constraint firstAttribute="centerY" secondItem="QR0-mu-DYh" secondAttribute="centerY" constant="0.5" id="F8J-Nd-Ky0"/>
-                <constraint firstAttribute="centerX" secondItem="50u-pU-TtL" secondAttribute="centerX" id="FpB-Z8-Ils"/>
+                <constraint firstItem="u8J-Xz-InF" firstAttribute="top" secondItem="50u-pU-TtL" secondAttribute="bottom" constant="40" id="0Ff-ZG-0vj"/>
+                <constraint firstAttribute="trailingMargin" secondItem="IXQ-ka-saL" secondAttribute="trailing" id="1Tm-k7-Ku0"/>
+                <constraint firstItem="50u-pU-TtL" firstAttribute="top" secondItem="IEI-IA-EfG" secondAttribute="bottom" id="2Ia-6K-vjD"/>
+                <constraint firstAttribute="trailing" secondItem="50u-pU-TtL" secondAttribute="trailing" id="480-tC-EYD"/>
+                <constraint firstAttribute="centerX" secondItem="O5D-GK-ink" secondAttribute="centerX" constant="9" id="Ek2-42-fY4"/>
+                <constraint firstItem="50u-pU-TtL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="MUy-g7-Yag"/>
+                <constraint firstItem="IXQ-ka-saL" firstAttribute="top" secondItem="u8J-Xz-InF" secondAttribute="bottom" constant="40" id="NgC-39-uKF"/>
+                <constraint firstItem="u8J-Xz-InF" firstAttribute="leading" secondItem="QR0-mu-DYh" secondAttribute="trailing" constant="40" id="SaM-0Y-PRT"/>
+                <constraint firstItem="IXQ-ka-saL" firstAttribute="leading" secondItem="u8J-Xz-InF" secondAttribute="leading" id="Wlb-YY-a2J"/>
+                <constraint firstItem="IXQ-ka-saL" firstAttribute="centerY" secondItem="cLJ-eO-wZs" secondAttribute="centerY" id="YD9-9K-FGg"/>
+                <constraint firstAttribute="bottom" secondItem="O5D-GK-ink" secondAttribute="bottom" constant="150" id="aNQ-wi-4px"/>
+                <constraint firstItem="QR0-mu-DYh" firstAttribute="top" secondItem="50u-pU-TtL" secondAttribute="bottom" constant="44" id="d5J-gk-gsu"/>
+                <constraint firstItem="O5D-GK-ink" firstAttribute="top" secondItem="IXQ-ka-saL" secondAttribute="bottom" constant="40" id="dbd-Kd-eFI"/>
+                <constraint firstAttribute="centerX" secondItem="IEI-IA-EfG" secondAttribute="centerX" id="ee0-kP-xrl"/>
+                <constraint firstItem="u8J-Xz-InF" firstAttribute="centerY" secondItem="QR0-mu-DYh" secondAttribute="centerY" id="ie4-vk-GV9"/>
+                <constraint firstItem="cLJ-eO-wZs" firstAttribute="leading" secondItem="QR0-mu-DYh" secondAttribute="leading" id="ioi-u7-O8h"/>
+                <constraint firstItem="cLJ-eO-wZs" firstAttribute="trailing" secondItem="QR0-mu-DYh" secondAttribute="trailing" id="m5o-8c-vgN"/>
+                <constraint firstItem="QR0-mu-DYh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="12" id="mYW-vZ-Ptb"/>
+                <constraint firstItem="IEI-IA-EfG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="tYP-CC-nyI"/>
+                <constraint firstItem="IEI-IA-EfG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="tyq-60-Z4y"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="aNQ-wi-4px"/>
+                </mask>
+            </variation>
             <connections>
                 <outletCollection property="gestureRecognizers" destination="fpw-V8-eOG" appends="YES" id="2c4-O7-Pch"/>
             </connections>
+            <point key="canvasLocation" x="407" y="311"/>
         </view>
         <tapGestureRecognizer id="fpw-V8-eOG">
             <connections>
