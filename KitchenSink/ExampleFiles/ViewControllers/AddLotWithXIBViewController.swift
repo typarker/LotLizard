@@ -15,6 +15,12 @@ class AddLotWithXIBViewController: UIViewController, PFLogInViewControllerDelega
     @IBOutlet weak var mapView: MKMapView!
     
     
+    @IBAction func tap(sender: AnyObject) {
+        self.view.endEditing(true);
+        println("tapped")
+        }
+        
+    
     @IBOutlet weak var price: UITextField!
     @IBOutlet weak var notes: UITextView!
     @IBAction func sellSpot(sender: UIButton) {
@@ -64,6 +70,8 @@ class AddLotWithXIBViewController: UIViewController, PFLogInViewControllerDelega
         println(self.longitude)
     }
 }
+
+ 
 
 
 

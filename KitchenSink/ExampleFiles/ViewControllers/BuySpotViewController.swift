@@ -28,6 +28,7 @@ class BuySpotViewController: UIViewController, MKMapViewDelegate {
 //        self.restorationIdentifier = "BuySpotViewControllerRestorationKey"
 //    }
     
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -92,10 +93,12 @@ class BuySpotViewController: UIViewController, MKMapViewDelegate {
                 // Do something with the found objects
                 for object in objects {
                     NSLog("%@", object.objectId)
-                    let latitude = object["latitude"] as Double
-                    let longitude = object["longitude"] as Double
+                    let pfGeo = object["location"] as PFGeoPoint
+                    let latitude = pfGeo.latitude as Double
+                    let longitude = pfGeo.longitude as Double
                     let price = object["price"] as String
                     let coord = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                    
                     let id = object.objectId
                     let lotAnnotation = LotAnnotation(coordinate: coord, title: price, subtitle: "Dollars", id: id) // 3
                     self.mapView.addAnnotation(lotAnnotation) // 4

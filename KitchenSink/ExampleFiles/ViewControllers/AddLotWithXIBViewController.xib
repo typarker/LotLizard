@@ -54,11 +54,20 @@
                 </textView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstAttribute="centerX" secondItem="QR0-mu-DYh" secondAttribute="centerX" id="DMF-vo-w0M"/>
                 <constraint firstAttribute="centerY" secondItem="QR0-mu-DYh" secondAttribute="centerY" constant="0.5" id="F8J-Nd-Ky0"/>
                 <constraint firstAttribute="centerX" secondItem="50u-pU-TtL" secondAttribute="centerX" id="FpB-Z8-Ils"/>
             </constraints>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="fpw-V8-eOG" appends="YES" id="2c4-O7-Pch"/>
+            </connections>
         </view>
+        <tapGestureRecognizer id="fpw-V8-eOG">
+            <connections>
+                <action selector="tap:" destination="-1" id="9Dr-DH-8ez"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
 </document>
