@@ -33,7 +33,7 @@ class SellSpotViewController: UIViewController, MKMapViewDelegate, PFLogInViewCo
         
         if currentUser != nil {   // is user already signed in
             // Do stuff with the user
-            populateMap()
+//            populateMap()
         } else {
             // Show the signup or login screen
             var logInController = PFLogInViewController()
@@ -75,7 +75,7 @@ class SellSpotViewController: UIViewController, MKMapViewDelegate, PFLogInViewCo
         self.view.addGestureRecognizer(twoFingerDoubleTap)
         
         self.setupLeftMenuButton()
-        self.setupRightMenuButton()
+        //self.setupRightMenuButton()
         
         let barColor = UIColor(red: 247/255, green: 249/255, blue: 250/255, alpha: 1.0)
         self.navigationController?.navigationBar.barTintColor = barColor
@@ -85,7 +85,7 @@ class SellSpotViewController: UIViewController, MKMapViewDelegate, PFLogInViewCo
         let backView = UIView()
         backView.backgroundColor = UIColor(red: 208/255, green: 208/255, blue: 208/255, alpha: 1.0)
         //self.tableView.backgroundView = backView
-        //populateMap()
+//        populateMap()
         
     }
     
@@ -93,7 +93,7 @@ class SellSpotViewController: UIViewController, MKMapViewDelegate, PFLogInViewCo
     
     func logInViewController(controller: PFLogInViewController, didLogInUser user: PFUser) -> Void {
         self.dismissViewControllerAnimated(true, completion: nil)
-        populateMap()
+//        populateMap()
         
         //matching user to device
         let currentInstallation: PFInstallation = PFInstallation.currentInstallation()
@@ -196,9 +196,19 @@ class SellSpotViewController: UIViewController, MKMapViewDelegate, PFLogInViewCo
     
     func buttonClicked(sender: UIButton!) {
         
+        //let ann = self.mapView.selectedAnnotations[0] as LotAnnotation
+        
         let secondViewController: AddLotWithXIBViewController = AddLotWithXIBViewController(nibName:"AddLotWithXIBViewController", bundle: nil)
-        secondViewController.latitude = coordToPass.latitude
-        secondViewController.longitude = coordToPass.longitude
+        //secondViewController.ann = ann
+        
+//        if ann.coordinate.latitude == 0 {
+            secondViewController.latitude = coordToPass.latitude
+            secondViewController.longitude = coordToPass.longitude
+//        }
+//        else{
+//            secondViewController.latitude = ann.coordinate.latitude
+//            secondViewController.longitude = ann.coordinate.longitude
+//        }
         //let secondViewController: BuySpotViewController = BuySpotViewController()
         self.presentViewController(secondViewController, animated: true, completion: nil)
         //performSegueWithIdentifier("goToAddLot", sender: sender)
@@ -213,7 +223,7 @@ class SellSpotViewController: UIViewController, MKMapViewDelegate, PFLogInViewCo
         var user = PFUser.currentUser()
         
         var query = PFQuery(className:"MyLotParse")
-        query.whereKey("user", equalTo: user.username)
+        query.whereKey("owner", equalTo: user)
         query.findObjectsInBackgroundWithBlock {
             (objects: [AnyObject]!, error: NSError!) -> Void in
             if error == nil {
@@ -222,12 +232,15 @@ class SellSpotViewController: UIViewController, MKMapViewDelegate, PFLogInViewCo
                 // Do something with the found objects
                 for object in objects {
                     NSLog("%@", object.objectId)
-                    let latitude = object["latitude"] as Double
-                    let longitude = object["longitude"] as Double
+                    let location = object ["location"] as PFGeoPoint
+                    let latitude = location.latitude as Double
+                    let longitude = location.longitude as Double
                     let price = object["price"] as String
                     let coord = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
                     let id = object.objectId
-                    let lotAnnotation = LotAnnotation(coordinate: coord, title: price, subtitle: "Dollars", id: id) // 3
+                    let spots = object["spots"] as Int
+                    let notes = object["notes"] as String?
+                    let lotAnnotation = LotAnnotation(coordinate: coord, title: price, subtitle: "Dollars", id: id, owner: user, notes: notes, spots: spots) // 3
                     self.mapView.addAnnotation(lotAnnotation) // 4
                     
                 }

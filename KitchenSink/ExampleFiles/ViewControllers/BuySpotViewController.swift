@@ -16,17 +16,7 @@ class BuySpotViewController: UIViewController, MKMapViewDelegate {
     
     var mapView: MKMapView!
     
-//    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-//        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-//        
-//        self.restorationIdentifier = "BuySpotViewControllerRestorationKey"
-//    }
-//    
-//    override init() {
-//        super.init()
-//        
-//        self.restorationIdentifier = "BuySpotViewControllerRestorationKey"
-//    }
+
     
    
     override func viewDidLoad() {
@@ -63,7 +53,7 @@ class BuySpotViewController: UIViewController, MKMapViewDelegate {
         self.view.addGestureRecognizer(twoFingerDoubleTap)
         
         self.setupLeftMenuButton()
-        self.setupRightMenuButton()
+        //self.setupRightMenuButton()
         
         let barColor = UIColor(red: 247/255, green: 249/255, blue: 250/255, alpha: 1.0)
         self.navigationController?.navigationBar.barTintColor = barColor
@@ -93,14 +83,16 @@ class BuySpotViewController: UIViewController, MKMapViewDelegate {
                 // Do something with the found objects
                 for object in objects {
                     NSLog("%@", object.objectId)
-                    let pfGeo = object["location"] as PFGeoPoint
-                    let latitude = pfGeo.latitude as Double
-                    let longitude = pfGeo.longitude as Double
+                    let location = object ["location"] as PFGeoPoint
+                    let latitude = location.latitude as Double
+                    let longitude = location.longitude as Double
                     let price = object["price"] as String
+                    let owner = object["owner"] as PFUser?
                     let coord = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-                    
                     let id = object.objectId
-                    let lotAnnotation = LotAnnotation(coordinate: coord, title: price, subtitle: "Dollars", id: id) // 3
+                    let notes = object["notes"] as String?
+                    let spots = object["spots"] as Int
+                    let lotAnnotation = LotAnnotation(coordinate: coord, title: price, subtitle: "Dollars", id: id, owner: owner!, notes: notes, spots: spots) // 3
                     self.mapView.addAnnotation(lotAnnotation) // 4
                     
                 }
@@ -109,6 +101,7 @@ class BuySpotViewController: UIViewController, MKMapViewDelegate {
                 NSLog("Error: %@ %@", error, error.userInfo!)
             }
         }
+
         
     }
     
@@ -136,8 +129,24 @@ class BuySpotViewController: UIViewController, MKMapViewDelegate {
     }
 
     
+    func buttonClicked(sender: UIButton!) {
+        
+        
+        let ann = self.mapView.selectedAnnotations[0] as LotAnnotation
+        
+                
+        let secondViewController: PurchaseSpotViewController = PurchaseSpotViewController(nibName:"PurchaseSpot", bundle: nil)
+        secondViewController.latitude = ann.coordinate.latitude
+        secondViewController.longitude = ann.coordinate.longitude
+        secondViewController.ann = ann
+        //let secondViewController: BuySpotViewController = BuySpotViewController()
+        self.presentViewController(secondViewController, animated: true, completion: nil)
+        //performSegueWithIdentifier("goToAddLot", sender: sender)
+        
     
-
+        
+    
+    }
     
     func setupLeftMenuButton() {
         let leftDrawerButton = DrawerBarButtonItem(target: self, action: "leftDrawerButtonPress:")

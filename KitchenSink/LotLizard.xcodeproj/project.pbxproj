@@ -46,6 +46,8 @@
 		A0BADEA21A695AF3004E3F4B /* LeftNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BADEA11A695AF3004E3F4B /* LeftNavigationViewController.swift */; };
 		A0BADEAD1A69AC43004E3F4B /* SellSpotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BADEAC1A69AC43004E3F4B /* SellSpotViewController.swift */; };
 		A0BADEAF1A69B24B004E3F4B /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0BADEAE1A69B24B004E3F4B /* Accounts.framework */; };
+		A0BEADA51A73EED7009350E3 /* PurchaseSpot.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0BEADA41A73EED7009350E3 /* PurchaseSpot.xib */; };
+		A0BEADA71A7539DA009350E3 /* PurchaseSpotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BEADA61A7539DA009350E3 /* PurchaseSpotViewController.swift */; };
 		A0C8DBB91A6F1BAD00590055 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C8DBB81A6F1BAD00590055 /* AccountViewController.swift */; };
 		A0C8DBC51A7087AB00590055 /* AddLotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C8DBC41A7087AB00590055 /* AddLotViewController.swift */; };
 		A0C8DBC71A72A4BF00590055 /* AddLot.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0C8DBC61A72A4BF00590055 /* AddLot.xib */; };
@@ -96,6 +98,8 @@
 		A0BADEA11A695AF3004E3F4B /* LeftNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftNavigationViewController.swift; sourceTree = "<group>"; };
 		A0BADEAC1A69AC43004E3F4B /* SellSpotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellSpotViewController.swift; sourceTree = "<group>"; };
 		A0BADEAE1A69B24B004E3F4B /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		A0BEADA41A73EED7009350E3 /* PurchaseSpot.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurchaseSpot.xib; sourceTree = "<group>"; };
+		A0BEADA61A7539DA009350E3 /* PurchaseSpotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseSpotViewController.swift; sourceTree = "<group>"; };
 		A0C8DBB81A6F1BAD00590055 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		A0C8DBC41A7087AB00590055 /* AddLotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLotViewController.swift; sourceTree = "<group>"; };
 		A0C8DBC61A72A4BF00590055 /* AddLot.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddLot.xib; sourceTree = "<group>"; };
@@ -241,11 +245,13 @@
 				A0BADEA11A695AF3004E3F4B /* LeftNavigationViewController.swift */,
 				A0C8DBC61A72A4BF00590055 /* AddLot.xib */,
 				A0C8DBC41A7087AB00590055 /* AddLotViewController.swift */,
+				A0C8DBC91A72A72A00590055 /* AddLotWithXIBViewController.xib */,
 				A0C8DBB81A6F1BAD00590055 /* AccountViewController.swift */,
 				A0BADE761A685475004E3F4B /* BuySpotViewController.swift */,
 				A0BADEAC1A69AC43004E3F4B /* SellSpotViewController.swift */,
 				A0C8DBC81A72A72A00590055 /* AddLotWithXIBViewController.swift */,
-				A0C8DBC91A72A72A00590055 /* AddLotWithXIBViewController.xib */,
+				A0BEADA61A7539DA009350E3 /* PurchaseSpotViewController.swift */,
+				A0BEADA41A73EED7009350E3 /* PurchaseSpot.xib */,
 				A0BADE9F1A6865AC004E3F4B /* redPin.png */,
 				A0BADE9D1A68593A004E3F4B /* LotAnnotation.swift */,
 			);
@@ -315,6 +321,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0BEADA51A73EED7009350E3 /* PurchaseSpot.xib in Resources */,
 				2BE66C7E19C50D87005EDC19 /* LaunchScreen.xib in Resources */,
 				A0C8DBC71A72A4BF00590055 /* AddLot.xib in Resources */,
 				A0C8DBCB1A72A72A00590055 /* AddLotWithXIBViewController.xib in Resources */,
@@ -339,6 +346,7 @@
 				A0C8DBB91A6F1BAD00590055 /* AccountViewController.swift in Sources */,
 				2BCB04CC19C4F58F002CBDB6 /* DrawerBarButtonItem.swift in Sources */,
 				2BE66C7619C50BD6005EDC19 /* ExampleLeftSideDrawerViewController.swift in Sources */,
+				A0BEADA71A7539DA009350E3 /* PurchaseSpotViewController.swift in Sources */,
 				2BC043CB19C4FFC300CA68B6 /* TableViewCell.swift in Sources */,
 				2BCB04CD19C4F58F002CBDB6 /* DrawerController.swift in Sources */,
 				2BE66C7C19C50C2C005EDC19 /* SideDrawerSectionHeaderView.swift in Sources */,

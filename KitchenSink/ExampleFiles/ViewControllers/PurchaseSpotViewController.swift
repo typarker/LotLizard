@@ -1,4 +1,12 @@
 //
+//  PurchaseSpotViewController.swift
+//  LotLizard
+//
+//  Created by Ty Parker on 1/25/15.
+//  Copyright (c) 2015 evolved.io. All rights reserved.
+//
+
+//
 //  AddLotWithXIBViewController.swift
 //  LotLizard
 //
@@ -9,14 +17,14 @@
 import UIKit
 import MapKit
 
-class AddLotWithXIBViewController: UIViewController, PFLogInViewControllerDelegate, MKMapViewDelegate {
+class PurchaseSpotViewController: UIViewController, PFLogInViewControllerDelegate, MKMapViewDelegate {
     
     
     @IBAction func cancel(sender: UIBarButtonItem) {
         
         dismissViewControllerAnimated(true, completion: nil)
     }
-
+    
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -24,37 +32,58 @@ class AddLotWithXIBViewController: UIViewController, PFLogInViewControllerDelega
     @IBAction func tap(sender: AnyObject) {
         self.view.endEditing(true);
         println("tapped")
-        }
-        
-    var ann:LotAnnotation!
+    }
+    
+    
     @IBOutlet weak var price: UITextField!
     @IBOutlet weak var notes: UITextView!
     @IBAction func sellSpot(sender: UIButton) {
         
-        var user = PFUser.currentUser()
-        var myLotParse = PFObject(className: "MyLotParse")
-//        myLotParse.setObject(self.latitude, forKey: "latitude")
-//        myLotParse.setObject(self.longitude, forKey: "longitude")
-        myLotParse.setObject(PFGeoPoint(latitude: self.latitude, longitude: self.longitude), forKey: "location")
-        myLotParse.setObject(1, forKey: "spots")
-        myLotParse.setObject(self.price.text, forKey: "price")
-        myLotParse.setObject(self.notes.text, forKey: "notes")
-        //myLotParse.setObject(user.username, forKey: "user")
-        myLotParse.setObject(user, forKey: "owner")
-        myLotParse.saveInBackgroundWithBlock {
-            (success: Bool!, error: NSError!) -> Void in
-            if true {
-                NSLog("Object created with id: \(myLotParse.objectId)")
-            } else {
+
+        
+                
+                //send push to seller
+                let message: NSString = "Some Dude Bought Your Spot"
+                
+                var data = [ "title": "Some Title",
+                    "alert": message]
+                let owner = ann.owner
+                
+                var installQuery = PFQuery(className: "Installation")
+                installQuery.whereKey("user" , equalTo: owner)
+                //var installation = installQuery.getFirstObject()
+                //var installId = installation.objectForKey("installationId") as? String
+                
+                var push: PFPush = PFPush()
+                push.setQuery(installQuery)
+                push.setData(data)
+                push.sendPushInBackground()
+                
+                
+                
+                //var query: PFQuery = PFInstallation.query()
+                
+                //remove a spot
+        var query = PFQuery(className:"MyLotParse")
+        query.getObjectInBackgroundWithId(ann.id) {
+            (myLotParse: PFObject!, error: NSError!) -> Void in
+            if error != nil {
                 NSLog("%@", error)
             }
-        }
-        dismissViewControllerAnimated(true, completion: nil)
+            else {
+                myLotParse.incrementKey("spots", byAmount: -1)
+                myLotParse.saveInBackground()
+            }
+
+        self.dismissViewControllerAnimated(true, completion: nil)
         
     }
+    }
+    
     
     var latitude:Double!
     var longitude:Double!
+    var ann:LotAnnotation!
     
     
     
@@ -71,13 +100,8 @@ class AddLotWithXIBViewController: UIViewController, PFLogInViewControllerDelega
         let span = MKCoordinateSpanMake(0.001, 0.001)
         let region = MKCoordinateRegion(center: location, span: span)
         self.mapView.setRegion(region, animated: true)
-        
-//        if ann.title != nil {
-//            price.text = ann.title
-//        }
-//        if ann.notes != nil {
-//           notes.text = ann.notes
-//        }
+        price.text = ann.title
+        notes.text = ann.notes
         
         
         
@@ -96,8 +120,8 @@ class AddLotWithXIBViewController: UIViewController, PFLogInViewControllerDelega
         notes.layer.borderWidth = 0.5
         notes.clipsToBounds = true
     }
-
-
+    
+    
 }
 
 
@@ -111,4 +135,3 @@ override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 // Pass the selected object to the new view controller.
 }
 */
-
